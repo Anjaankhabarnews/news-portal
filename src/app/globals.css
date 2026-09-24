@@ -1,0 +1,489 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   ANJAAN KHABAR — DESIGN TOKENS
+   The default Tailwind palette is removed on purpose: every colour on the
+   site must come from the brand system below.
+   ========================================================================== */
+
+@theme {
+  --color-*: initial;
+
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Brand — authority */
+  --color-navy-950: #040c18;
+  --color-navy-900: #071426;
+  --color-navy-800: #0c1f3a;
+  --color-navy-700: #173157;
+  --color-navy-300: #9fb0c8;
+  --color-navy-100: #e6ebf3;
+
+  /* Brand — urgency / breaking / primary action */
+  --color-red: #d71920;
+  --color-red-700: #b0131a;
+  --color-red-50: #fdecec;
+
+  /* Brand — digital / navigation accent */
+  --color-cobalt: #1646c8;
+  --color-cobalt-700: #0f369f;
+  --color-cobalt-50: #eaf0fd;
+
+  /* Limited accents */
+  --color-cyan: #19b3e3;
+  --color-gold: #f2b705;
+
+  /* Editorial neutrals */
+  --color-paper: #f5f6f8;
+  --color-ink: #111827;
+  --color-ink-2: #374151;
+  --color-muted: #6b7280;
+  --color-line: #e5e7eb;
+  --color-line-strong: #cfd4dc;
+
+  /* Functional */
+  --color-whatsapp: #25d366;
+  --color-success: #127a3e;
+
+  /* Type families (populated by next/font in layout.tsx).
+     Devanagari fallbacks are pre-wired for the Hindi edition. */
+  --font-sans: var(--font-source-sans), "Noto Sans Devanagari", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: var(--font-source-serif), "Noto Serif Devanagari", Georgia, "Times New Roman", serif;
+
+  /* Breakpoints (mobile-first). xs covers larger phones. */
+  --breakpoint-xs: 25rem; /* 400px */
+  --breakpoint-sm: 40rem; /* 640px */
+  --breakpoint-md: 48rem; /* 768px */
+  --breakpoint-lg: 64rem; /* 1024px */
+  --breakpoint-xl: 80rem; /* 1280px */
+  --breakpoint-2xl: 90rem; /* 1440px */
+
+  /* Radii — editorial, nearly square */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+
+  /* Elevation — used sparingly (menus, dialogs only) */
+  --shadow-menu: 0 12px 32px -12px rgb(7 20 38 / 0.28), 0 2px 6px rgb(7 20 38 / 0.08);
+  --shadow-dialog: 0 24px 64px -16px rgb(4 12 24 / 0.45);
+
+  --ease-out-quick: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* Layout constants shared by CSS and components */
+:root {
+  --page-max: 1320px;
+  --gutter: 16px;
+  --header-mobile-h: 56px;
+  /* Reading measure: ~70 characters of 19px serif body text. */
+  --measure: 42rem;
+  color-scheme: light;
+}
+
+@media (min-width: 48rem) {
+  :root {
+    --gutter: 24px;
+  }
+}
+@media (min-width: 80rem) {
+  :root {
+    --gutter: 32px;
+  }
+}
+
+/* Hindi edition hook: `lang="hi"` swaps metrics without redesigning components. */
+:lang(hi) {
+  --hl-leading: 1.35;
+  --body-leading: 1.85;
+}
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background: var(--color-white);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "kern", "liga";
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+  ::selection {
+    background: var(--color-red);
+    color: var(--color-white);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-cobalt);
+    outline-offset: 2px;
+  }
+  .on-dark :focus-visible,
+  .on-dark:focus-visible {
+    outline-color: var(--color-gold);
+  }
+  img,
+  svg,
+  video {
+    display: block;
+  }
+  button {
+    cursor: pointer;
+  }
+  dialog {
+    color: inherit;
+  }
+}
+
+/* ==========================================================================
+   LAYOUT PRIMITIVES
+   ========================================================================== */
+
+@utility container-page {
+  width: 100%;
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Horizontally scrollable rail (mobile chips, carousels) with no visible scrollbar */
+@utility scroll-rail {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Makes a link cover its whole card (single tab stop per card). Parent must be `relative`. */
+@utility stretched-link {
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+}
+
+/* ==========================================================================
+   TYPOGRAPHY ROLES
+   Components use these roles instead of ad-hoc sizes.
+   ========================================================================== */
+
+@utility t-kicker {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@utility t-meta {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  color: var(--color-muted);
+}
+
+@utility t-display {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 1.2rem + 2.4vw, 2.875rem);
+  line-height: var(--hl-leading, 1.1);
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+@utility t-h1 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 1.3rem + 1.9vw, 2.75rem);
+  line-height: var(--hl-leading, 1.12);
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+@utility t-h-lg {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(1.375rem, 1.15rem + 0.8vw, 1.75rem);
+  line-height: var(--hl-leading, 1.18);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+@utility t-h-md {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.1875rem;
+  line-height: var(--hl-leading, 1.25);
+  letter-spacing: -0.005em;
+  text-wrap: pretty;
+}
+
+@utility t-h-sm {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.0625rem;
+  line-height: var(--hl-leading, 1.3);
+  text-wrap: pretty;
+}
+
+@utility t-h-xs {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  line-height: var(--hl-leading, 1.32);
+  text-wrap: pretty;
+}
+
+@utility t-dek {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-ink-2);
+}
+
+@utility t-section {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: 1.0625rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Headline link behaviour: quiet underline on hover/focus */
+@utility hl-link {
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  transition: text-decoration-color 150ms var(--ease-out-quick), color 150ms;
+  .group:hover &,
+  &:hover,
+  &:focus-visible {
+    text-decoration-color: currentColor;
+  }
+}
+
+/* Image zoom on card hover */
+@utility media-zoom {
+  transition: transform 450ms var(--ease-out-quick);
+  .group:hover & {
+    transform: scale(1.035);
+  }
+}
+
+/* ==========================================================================
+   ARTICLE PROSE
+   ========================================================================== */
+
+@utility prose-article {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  line-height: var(--body-leading, 1.72);
+  color: var(--color-ink);
+  max-width: var(--measure);
+
+  @media (min-width: 48rem) {
+    font-size: 1.1875rem;
+  }
+
+  & > * + * {
+    margin-top: 1.25em;
+  }
+  & h2 {
+    font-weight: 700;
+    font-size: 1.4em;
+    line-height: 1.25;
+    margin-top: 1.8em;
+    letter-spacing: -0.01em;
+  }
+  & a:not([class]) {
+    color: var(--color-cobalt);
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+  }
+  & ul,
+  & ol {
+    padding-left: 1.25em;
+  }
+  & ul {
+    list-style: disc;
+  }
+  & ol {
+    list-style: decimal;
+  }
+  & li + li {
+    margin-top: 0.5em;
+  }
+  & li::marker {
+    color: var(--color-red);
+  }
+  & blockquote {
+    border-left: 3px solid var(--color-red);
+    padding-left: 1em;
+    font-size: 1.15em;
+    font-style: italic;
+    color: var(--color-ink-2);
+  }
+}
+
+/* ==========================================================================
+   MOTION
+   ========================================================================== */
+
+@keyframes ak-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes ak-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+@keyframes ak-shimmer {
+  from {
+    background-position: -200% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}
+@keyframes ak-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-fade-in {
+  animation: ak-fade-in 280ms var(--ease-out-quick) both;
+}
+.animate-live-dot {
+  animation: ak-pulse 1.8s ease-in-out infinite;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--color-paper) 25%, var(--color-line) 50%, var(--color-paper) 75%);
+  background-size: 200% 100%;
+  animation: ak-shimmer 1.4s linear infinite;
+}
+
+/* Reading progress bar — pure CSS scroll-driven animation, no JS. */
+.reading-progress {
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+}
+@supports (animation-timeline: scroll()) {
+  .reading-progress {
+    animation: ak-progress linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
+/* Native <dialog> drawers & modals */
+dialog.ak-drawer {
+  /* Right-aligned via vw math rather than margin:auto (robust in device emulators and WebViews). */
+  inset: 0;
+  margin: 0 0 0 calc(100vw - min(100vw, 420px));
+  height: 100dvh;
+  max-height: 100dvh;
+  width: min(100vw, 420px);
+  max-width: 100vw;
+  border: 0;
+  padding: 0;
+  transform: translateX(100%);
+  transition:
+    transform 260ms var(--ease-out-quick),
+    display 260ms allow-discrete,
+    overlay 260ms allow-discrete;
+}
+dialog.ak-drawer[open] {
+  transform: none;
+}
+@starting-style {
+  dialog.ak-drawer[open] {
+    transform: translateX(100%);
+  }
+}
+
+dialog.ak-modal {
+  --modal-w: min(calc(100vw - 24px), 720px);
+  inset: 0 auto auto 0;
+  margin: max(8vh, 16px) 0 0 calc((100vw - var(--modal-w)) / 2);
+  width: var(--modal-w);
+  max-width: none;
+  border: 0;
+  padding: 0;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition:
+    opacity 180ms var(--ease-out-quick),
+    transform 180ms var(--ease-out-quick),
+    display 180ms allow-discrete,
+    overlay 180ms allow-discrete;
+}
+dialog.ak-modal[open] {
+  opacity: 1;
+  transform: none;
+}
+@starting-style {
+  dialog.ak-modal[open] {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+dialog::backdrop {
+  background: rgb(4 12 24 / 0);
+  transition:
+    background 220ms,
+    display 220ms allow-discrete,
+    overlay 220ms allow-discrete;
+}
+dialog[open]::backdrop {
+  background: rgb(4 12 24 / 0.6);
+}
+@starting-style {
+  dialog[open]::backdrop {
+    background: rgb(4 12 24 / 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reading-progress {
+    display: none;
+  }
+}
