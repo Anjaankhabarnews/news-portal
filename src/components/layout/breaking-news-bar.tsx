@@ -21,22 +21,27 @@ function timeAgo(iso: string) {
  * - Pausable; pauses on hover/focus; respects reduced motion.
  * - Subscribes to Supabase Realtime when configured, so editors can push items live.
  */
-export function BreakingNewsBar({ initial }: { initial: BreakingItem[] }) {
+export function BreakingNewsBar({ initial, live = false }: { initial: BreakingItem[]; live?: boolean }) {
   const [items, setItems] = useState(initial);
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const [hovered, setHovered] = useState(false);
   const [, setTick] = useState(0);
 
-  // Live updates (lazy-loaded; no Supabase code ships when it is not configured).
+  // Live updates only when the site reads from Supabase (never in demo mode,
+  // which would swap demo items for the live list). Lazy-loaded.
   useEffect(() => {
-    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) return;
+    if (!live) return;
+    let cancelled = false;
     let cleanup: (() => void) | undefined;
     import("@/lib/supabase/realtime").then(({ subscribeToBreaking }) => {
-      cleanup = subscribeToBreaking(setItems);
+      if (!cancelled) cleanup = subscribeToBreaking(setItems);
     });
-    return () => cleanup?.();
-  }, []);
+    return () => {
+      cancelled = true;
+      cleanup?.();
+    };
+  }, [live]);
 
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

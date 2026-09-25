@@ -74,7 +74,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         ) : null}
 
         <SiteHeader />
-        <BreakingNewsBar initial={breaking} />
+        <BreakingNewsBar initial={breaking} live={contentSourceName === "supabase"} />
 
         <main id="main" tabIndex={-1} className="focus:outline-none">
           {children}

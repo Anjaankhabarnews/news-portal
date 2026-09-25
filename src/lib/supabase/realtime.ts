@@ -19,8 +19,10 @@ export function subscribeToBreaking(onChange: (items: BreakingItem[]) => void) {
     }
   };
 
+  // Unique channel per subscription: React (dev) mounts effects twice, and a
+  // shared name would hand back an already-subscribed channel.
   const channel = db
-    .channel("breaking-news")
+    .channel(`breaking-news-${Math.random().toString(36).slice(2)}`)
     .on("postgres_changes", { event: "*", schema: "public", table: "breaking_news" }, () => void load())
     .subscribe();
 
