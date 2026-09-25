@@ -1,4 +1,5 @@
-import type { NextConfig } from "next";
+// Plain ESM config (not next.config.ts): Node loads it directly, with no
+// TypeScript transpilation step at config-load time.
 
 // Allow optimised images from the project's Supabase Storage bucket when configured.
 const supabaseHost = (() => {
@@ -16,7 +17,8 @@ const securityHeaders = [
   { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
 ];
 
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   // Hostinger's Node.js hosting runs `npm run build` + `npm start` (next start),
   // which is incompatible with `output: "standalone"` — so it is not set.
   poweredByHeader: false,
