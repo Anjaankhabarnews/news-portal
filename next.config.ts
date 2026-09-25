@@ -17,8 +17,8 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
-  // Self-contained server bundle for a Hostinger VPS (node .next/standalone/server.js).
-  output: "standalone",
+  // Hostinger's Node.js hosting runs `npm run build` + `npm start` (next start),
+  // which is incompatible with `output: "standalone"` — so it is not set.
   poweredByHeader: false,
   images: {
     formats: ["image/avif", "image/webp"],

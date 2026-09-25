@@ -21,7 +21,7 @@ npm run build        # production build (also type-checks)
 npm run start        # serve the production build
 ```
 
-Requires Node.js 20.9+ (developed on Node 24).
+Requires Node.js 22+ (`@supabase/supabase-js` 2.117 requires it; see `.nvmrc`). Developed on Node 24.
 
 ## ⚠️ Add the official logo
 
@@ -115,17 +115,22 @@ Security notes:
 - **Most Read** is ordered by recent views from `article_views`, weighted towards the last 6 hours. View counts are never displayed.
 - **Ads** come from the `advertisements` table: placement, advertiser, campaign, date window, weight, active flag. Direct, government and local campaigns are all supported. If none is live, the slot uses AdSense when configured, otherwise a house ad.
 
-## Deploying to a Hostinger VPS
+## Deploying to Hostinger
 
-The build uses `output: "standalone"`, a self-contained Node server.
+**Hostinger Node.js web app (managed):** deploy from GitHub (`main`) with:
+
+- Node.js version: **22**
+- Install: `npm ci` (or `npm install`) · Build: `npm run build` · Start: `npm start`
+- Environment variables: see `.env.example` (set `NEXT_PUBLIC_SITE_URL=https://anjaankhabar.com`)
+
+**Hostinger VPS:**
 
 ```bash
-# on the server (Ubuntu), Node 20+ installed
+# on the server (Ubuntu), Node 22+ installed
 git clone <repo> anjaan-khabar && cd anjaan-khabar
 cp .env.example .env.production   # fill in real values; NEXT_PUBLIC_SITE_URL=https://your-domain
 npm ci && npm run build
-cp -r public .next/standalone/ && cp -r .next/static .next/standalone/.next/
-PORT=3000 HOSTNAME=127.0.0.1 node .next/standalone/server.js   # or run under pm2 / systemd
+PORT=3000 npm start               # run under pm2 / systemd
 ```
 
 Put Nginx in front of it: proxy to `127.0.0.1:3000`, enable HTTPS with Let's Encrypt, and point the domain's DNS at the VPS.

@@ -12,7 +12,7 @@
     "images:fetch": "node scripts/images/fetch-selected.mjs"
   },
   "engines": {
-    "node": ">=20.9"
+    "node": ">=22"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.117.1",
