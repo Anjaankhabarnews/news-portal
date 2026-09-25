@@ -95,7 +95,7 @@ The Supabase security advisor reports no issues.
 For a new environment, apply the migrations in order in the SQL editor. Then set these environment variables:
 
 - `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`: the publishable key. It's safe in the browser because RLS is on.
-- `SUPABASE_SERVICE_ROLE_KEY`: **server-only**, used for news-tip inserts and signed uploads. Copy it from Dashboard → Project Settings → API Keys. Never prefix it with `NEXT_PUBLIC_`.
+- `SUPABASE_SECRET_KEY`: the **secret API key** (`sb_secret_…`), replacing the legacy `service_role` key. **Server-only**, used for news-tip inserts and signed uploads. Copy it from Dashboard → Project Settings → API Keys. Never prefix it with `NEXT_PUBLIC_`.
 
 Newsroom staff sign in with Supabase Auth and are added to `newsroom_members` with a role (`admin`, `editor`, `reporter` or `ad_manager`). RLS enforces permissions on the server.
 

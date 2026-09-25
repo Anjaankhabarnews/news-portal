@@ -14,7 +14,7 @@ export const metadata: Metadata = buildMetadata({
 
 export default function NewsTipPage() {
   // Only a boolean reaches the client — never the key itself.
-  const uploadsEnabled = Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY);
+  const uploadsEnabled = Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SECRET_KEY);
 
   return (
     <div className="container-page pt-5 md:pt-7">

@@ -38,7 +38,7 @@ export function getPublicClient(): SupabaseClient {
  * signed uploads). Never import this from a Client Component.
  */
 export function getServiceClient(): SupabaseClient | null {
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const key = process.env.SUPABASE_SECRET_KEY;
   if (!supabaseUrl || !key) return null;
   return createClient(supabaseUrl, key, { auth: { persistSession: false, autoRefreshToken: false } });
 }

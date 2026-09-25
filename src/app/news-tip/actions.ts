@@ -21,7 +21,7 @@ const hits = new Map<string, number[]>();
 async function clientKey() {
   const h = await headers();
   const ip = h.get("x-forwarded-for")?.split(",")[0]?.trim() || h.get("x-real-ip") || "unknown";
-  return createHash("sha256").update(`${ip}:${process.env.SUPABASE_SERVICE_ROLE_KEY ?? "ak"}`).digest("hex").slice(0, 32);
+  return createHash("sha256").update(`${ip}:${process.env.SUPABASE_SECRET_KEY ?? "ak"}`).digest("hex").slice(0, 32);
 }
 
 function rateLimited(key: string) {
