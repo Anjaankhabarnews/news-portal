@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Article, Locality, Section } from "@/lib/types";
 import { sectionPath } from "@/lib/urls";
 import { ArrowRight } from "@/components/icons";
-import { FeatureStory, StoryCard, StoryList, TextStory } from "@/components/news/story-cards";
+import { FeatureStory, HorizontalStory, StoryCard, StoryList, TextStory } from "@/components/news/story-cards";
 import { EmptyState, SectionHeader } from "@/components/ui/primitives";
 import { Band } from "./band";
 
@@ -100,7 +100,8 @@ export function HomeState({
             </h3>
             <StoryList>
               {across.map((a) => (
-                <TextStory key={a.id} article={a} as="h4" />
+                // Thumbnails wherever the column is wide enough (dropped only in the narrow 1024–1279px band).
+                <HorizontalStory key={a.id} article={a} as="h4" thumbClass="lg:max-xl:hidden" />
               ))}
             </StoryList>
           </aside>

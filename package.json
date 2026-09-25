@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "demo-images": "node scripts/generate-demo-images.mjs"
+    "images:search": "node scripts/images/search-commons.mjs",
+    "images:fetch": "node scripts/images/fetch-selected.mjs"
   },
   "engines": {
     "node": ">=20.9"

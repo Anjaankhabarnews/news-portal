@@ -12,6 +12,7 @@ import { StoryCard, StoryList, TextStory } from "@/components/news/story-cards";
 import { TipCta } from "@/components/news/tip-cta";
 import { JsonLd, breadcrumbSchema, newsArticleSchema } from "@/components/seo/json-ld";
 import { Breadcrumbs, DemoTag, Kicker, SectionHeader, type Crumb } from "@/components/ui/primitives";
+import { ImageCaption } from "@/components/ui/image-caption";
 import { StoryImage } from "@/components/ui/story-image";
 import { ArticleBody } from "./article-body";
 import { ArticleShare } from "./article-share";
@@ -109,15 +110,18 @@ export async function ArticleView({ article }: { article: Article }) {
               </div>
             </header>
 
-            <figure className="mt-6 -mx-[var(--gutter)] sm:mx-0">
-              <StoryImage image={article.image} ratio="16/9" priority zoom={false} sizes="(min-width: 1024px) 820px, 100vw" />
-              {article.image.caption || article.image.credit ? (
-                <figcaption className="t-meta mt-2 px-[var(--gutter)] sm:px-0">
-                  {article.image.caption}
-                  {article.image.credit ? <span className="text-muted"> · {article.image.credit}</span> : null}
-                </figcaption>
-              ) : null}
-            </figure>
+            {article.image ? (
+              <figure className="mt-6 -mx-[var(--gutter)] sm:mx-0">
+                <StoryImage
+                  image={article.image}
+                  ratio="16/9"
+                  priority
+                  zoom={false}
+                  sizes="(min-width: 1320px) 850px, (min-width: 1024px) 64vw, 100vw"
+                />
+                <ImageCaption image={article.image} className="mt-2 px-[var(--gutter)] sm:px-0" />
+              </figure>
+            ) : null}
 
             <div className="mx-auto max-w-[var(--measure)] lg:mx-0">
               {article.keyTakeaways?.length ? (

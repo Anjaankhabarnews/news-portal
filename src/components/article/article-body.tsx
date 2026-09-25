@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Fragment } from "react";
 import type { ArticleBlock } from "@/lib/types";
 import { InfoIcon } from "@/components/icons";
+import { ImageCaption } from "@/components/ui/image-caption";
 
 /**
  * Renders structured article blocks. Content is plain text rendered through
@@ -65,15 +66,11 @@ export function ArticleBody({
                     fill
                     sizes="(min-width: 768px) 680px, 100vw"
                     unoptimized={b.image.src.endsWith(".svg")}
+                    style={b.image.focal ? { objectPosition: b.image.focal } : undefined}
                     className="object-cover"
                   />
                 </div>
-                {b.image.caption ? (
-                  <figcaption className="t-meta mt-2">
-                    {b.image.caption}
-                    {b.image.credit ? <span className="text-muted/80"> · {b.image.credit}</span> : null}
-                  </figcaption>
-                ) : null}
+                <ImageCaption image={b.image} className="mt-2 font-sans" />
               </figure>
             );
             break;

@@ -3,6 +3,7 @@ import { getBrandLogos } from "@/lib/brand";
 import type { Article, Video } from "@/lib/types";
 import { absoluteUrl, articlePath, videoPath } from "@/lib/urls";
 import { isoDuration } from "@/lib/format";
+import { DEFAULT_OG } from "@/lib/seo";
 import type { Crumb } from "@/components/ui/primitives";
 
 /** Serialises structured data safely (prevents `</script>` breakout). */
@@ -66,7 +67,7 @@ export function newsArticleSchema(a: Article) {
     url,
     headline: a.title,
     description: a.dek,
-    image: [absoluteUrl(a.image.src)],
+    image: [absoluteUrl(a.image?.src ?? DEFAULT_OG)],
     datePublished: a.publishedAt,
     dateModified: a.updatedAt ?? a.publishedAt,
     inLanguage: site.language,

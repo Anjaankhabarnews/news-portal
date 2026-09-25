@@ -31,13 +31,41 @@ export interface Section {
   isHome?: boolean;
 }
 
+/**
+ * What an image actually shows, so readers are never misled:
+ *   event           — photographed at the event the story reports
+ *   representative  — illustrates the subject, not the specific event
+ *   file            — an earlier photo of the same place/person/subject
+ *   illustration    — drawn or designed graphic
+ *   ai-illustration — generated imagery (always labelled)
+ */
+export type ImageKind = "event" | "representative" | "file" | "illustration" | "ai-illustration";
+
+export interface ImageSource {
+  /** e.g. "Wikimedia Commons", "Anjaan Khabar", "Supabase media library" */
+  name: string;
+  url?: string;
+  /** Original file title at the source. */
+  title?: string;
+  author?: string;
+  licence?: string;
+  licenceUrl?: string;
+  /** Licence requires visible attribution (CC BY / BY-SA). */
+  attributionRequired?: boolean;
+}
+
 export interface MediaImage {
   src: string;
   alt: string;
   width: number;
   height: number;
   caption?: string;
+  /** Short credit line, e.g. "Photo: Jane Doe / Wikimedia Commons (CC BY-SA 4.0)". */
   credit?: string;
+  kind?: ImageKind;
+  source?: ImageSource;
+  /** CSS object-position keeping the subject in frame when cropped, e.g. "50% 40%". */
+  focal?: string;
 }
 
 export type ArticleBlock =
@@ -77,7 +105,8 @@ export interface Article {
   author: Author;
   publishedAt: string;
   updatedAt?: string;
-  image: MediaImage;
+  /** Optional: stories without a photo render a branded placeholder. */
+  image?: MediaImage;
   body: ArticleBlock[];
   keyTakeaways?: string[];
   format: ArticleFormat;

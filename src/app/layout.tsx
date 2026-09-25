@@ -67,8 +67,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         {contentSourceName === "demo" ? (
           <div className="bg-cobalt-50 text-[0.8125rem] text-cobalt-700">
             <p className="container-page py-1.5 text-center">
-              <strong className="font-semibold">Design preview.</strong> Stories, images and videos on this site are demo
-              placeholders, not real news.
+              <strong className="font-semibold">Design preview.</strong> Stories and videos are demo placeholders, not real news.
+              Photos are representative images.
             </p>
           </div>
         ) : null}

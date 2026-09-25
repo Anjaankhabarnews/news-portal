@@ -192,7 +192,7 @@ export default async function SearchPage({ searchParams }: { searchParams: Searc
                         <Timestamp iso={r.item.publishedAt} />
                       </p>
                     </div>
-                    <StoryImage image={r.item.image} ratio="4/3" sizes="160px" className="w-24 shrink-0 self-start sm:w-40" />
+                    <StoryImage image={r.item.image} ratio="4/3" sizes="160px" className="w-24 shrink-0 self-start sm:w-40" placeholderLabel={getSectionMeta(r.item.section)?.name} />
                   </li>
                 ) : (
                   <li key={`v-${r.item.id}`} className="group relative flex gap-4 py-5">

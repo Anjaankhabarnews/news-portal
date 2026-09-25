@@ -10,10 +10,11 @@
  * Each card exposes exactly one link (the headline, stretched over the card).
  */
 import Link from "next/link";
+import { imageKindLabel } from "@/data/images";
 import { formatTime } from "@/lib/format";
 import type { Article } from "@/lib/types";
 import { articlePath } from "@/lib/urls";
-import { Kicker, Timestamp } from "@/components/ui/primitives";
+import { Kicker, Timestamp, articleKicker } from "@/components/ui/primitives";
 import { StoryImage, type Ratio } from "@/components/ui/story-image";
 
 type HeadingTag = "h2" | "h3" | "h4";
@@ -57,12 +58,17 @@ export function LeadStory({
     <article className="group relative">
       <StoryImage
         image={article.image}
+        placeholderLabel={articleKicker(article)}
         ratio="16/9"
         sizes={sizes}
         priority={priority}
         className={bleedOnMobile ? "-mx-[var(--gutter)] sm:mx-0" : ""}
       />
-      <div className="pt-4">
+      {/* Honesty label: the lead photo is seen before any caption, so say when it isn't the event itself. */}
+      {article.image?.kind && imageKindLabel[article.image.kind] ? (
+        <p className="mt-1.5 text-right font-sans text-[0.6875rem] tracking-wide text-muted">{imageKindLabel[article.image.kind]}</p>
+      ) : null}
+      <div className="pt-3">
         <Kicker article={article} className="mb-2" />
         <Headline article={article} as={as} className="t-display text-ink" />
         {showDek ? <p className="t-dek mt-3 md:text-[1.0625rem]">{article.dek}</p> : null}
@@ -89,7 +95,8 @@ export function FeatureStory({
 }) {
   return (
     <article className="group relative grid gap-4 md:grid-cols-12 md:gap-6">
-      <StoryImage image={article.image} ratio="3/2" sizes={sizes} className="md:col-span-7" />
+      <StoryImage image={article.image}
+        placeholderLabel={articleKicker(article)} ratio="3/2" sizes={sizes} className="md:col-span-7" />
       <div className="md:col-span-5 md:pt-1">
         <Kicker article={article} className="mb-2" />
         <Headline article={article} as={as} className="t-h-lg text-ink" />
@@ -125,7 +132,8 @@ export function StoryCard({
   const inverse = tone === "inverse";
   return (
     <article className="group relative">
-      <StoryImage image={article.image} ratio={ratio} sizes={sizes} />
+      <StoryImage image={article.image}
+        placeholderLabel={articleKicker(article)} ratio={ratio} sizes={sizes} />
       <div className="pt-3">
         <Kicker article={article} className="mb-1.5" tone={inverse ? "inverse" : "red"} />
         <Headline article={article} as={as} className={`${hl} ${inverse ? "text-white" : "text-ink"}`} />
@@ -171,6 +179,7 @@ export function HorizontalStory({
       </div>
       <StoryImage
         image={article.image}
+        placeholderLabel={articleKicker(article)}
         ratio={size === "md" ? "3/2" : "4/3"}
         sizes={size === "md" ? "(min-width: 768px) 224px, 176px" : "128px"}
         className={`${thumb} shrink-0 self-start ${thumbClass}`}

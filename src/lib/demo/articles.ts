@@ -5,23 +5,13 @@
  * individuals, companies and specific incidents, and every one is flagged
  * `isDemo` so the UI labels it. Replace with Supabase content before launch.
  */
-import type { Article, ArticleBlock, ArticleFormat, MediaImage } from "@/lib/types";
+import { libraryImage, type ImageKey } from "@/data/images";
+import type { Article, ArticleBlock, ArticleFormat } from "@/lib/types";
 import { desks, type DeskId } from "./authors";
 
 /** Anchor demo timestamps to "now" (rounded to 5 min) so the preview always looks current. */
 const NOW = Math.floor(Date.now() / 300_000) * 300_000;
 const minutesAgo = (m: number) => new Date(NOW - m * 60_000).toISOString();
-
-export function demoImage(name: string, alt: string, caption?: string): MediaImage {
-  return {
-    src: `/demo/${name}.svg`,
-    alt,
-    width: 1600,
-    height: 900,
-    caption: caption ?? "Placeholder illustration for demo content.",
-    credit: "Demo illustration",
-  };
-}
 
 function demoBody(location: string | undefined, dek: string, deskName: string, format: ArticleFormat): ArticleBlock[] {
   const place = location ? `${location.toUpperCase()}: ` : "";
@@ -83,7 +73,11 @@ interface DemoInput {
   desk: DeskId;
   mins: number;
   updatedMins?: number;
-  image: [name: string, alt: string, caption?: string];
+  /**
+   * Library photo key. Demo stories are fictional, so every photo is
+   * `representative` — it illustrates the subject, never "the event".
+   */
+  image?: ImageKey;
   priority: number;
   format?: ArticleFormat;
   takeaways?: string[];
@@ -109,7 +103,7 @@ function article(i: DemoInput): Article {
     author,
     publishedAt: minutesAgo(i.mins),
     updatedAt: i.updatedMins !== undefined ? minutesAgo(i.updatedMins) : undefined,
-    image: demoImage(...i.image),
+    image: i.image ? libraryImage(i.image, "representative") : undefined,
     body: demoBody(i.location, i.dek, author.name, format),
     keyTakeaways: i.takeaways,
     format,
@@ -133,7 +127,7 @@ export const demoArticles: Article[] = [
     desk: "jharkhand",
     mins: 38,
     updatedMins: 9,
-    image: ["jharkhand-monsoon", "Illustration of rain over green hills", "Placeholder illustration: monsoon over the Chotanagpur plateau."],
+    image: "jh-spillway",
     priority: 98,
     isDeveloping: true,
     takeaways: [
@@ -152,7 +146,7 @@ export const demoArticles: Article[] = [
     location: "Ranchi",
     desk: "jharkhand",
     mins: 150,
-    image: ["jharkhand-health", "Abstract illustration representing healthcare"],
+    image: "jh-ambulance",
     priority: 80,
   }),
   article({
@@ -164,7 +158,7 @@ export const demoArticles: Article[] = [
     location: "Dhanbad",
     desk: "jharkhand",
     mins: 260,
-    image: ["jharkhand-rail", "Illustration of railway tracks converging"],
+    image: "jh-tatanagar",
     priority: 72,
   }),
   article({
@@ -177,7 +171,7 @@ export const demoArticles: Article[] = [
     location: "Khunti",
     desk: "jharkhand",
     mins: 540,
-    image: ["odisha-culture", "Abstract illustration of patterns and colour"],
+    image: "jh-dokra",
     priority: 64,
   }),
   // ---------------------------------------------------------------- JAMSHEDPUR
@@ -191,7 +185,7 @@ export const demoArticles: Article[] = [
     location: "Jamshedpur",
     desk: "jamshedpur",
     mins: 95,
-    image: ["jamshedpur-river", "Illustration of a river winding between hills"],
+    image: "jam-subarnarekha",
     priority: 91,
     takeaways: [
       "Residents' groups are asking for a continuous riverside walkway.",
@@ -209,7 +203,7 @@ export const demoArticles: Article[] = [
     location: "Jamshedpur",
     desk: "jamshedpur",
     mins: 22,
-    image: ["jamshedpur-road", "Illustration of a city road at dusk"],
+    image: "jam-market-lane",
     priority: 86,
     isBreaking: true,
   }),
@@ -223,7 +217,7 @@ export const demoArticles: Article[] = [
     location: "Jamshedpur",
     desk: "jamshedpur",
     mins: 210,
-    image: ["jamshedpur-skyline", "Illustration of a city skyline at night"],
+    image: "jam-steel-skyline",
     priority: 70,
   }),
   article({
@@ -237,7 +231,7 @@ export const demoArticles: Article[] = [
     location: "Jamshedpur",
     desk: "jamshedpur",
     mins: 400,
-    image: ["jamshedpur-industry", "Illustration of industrial chimneys"],
+    image: "jam-blast-furnace",
     priority: 66,
   }),
   article({
@@ -251,7 +245,7 @@ export const demoArticles: Article[] = [
     location: "Jamshedpur",
     desk: "jamshedpur",
     mins: 720,
-    image: ["education-books", "Illustration of books on a shelf"],
+    image: "jam-computer-lab",
     priority: 58,
   }),
   article({
@@ -264,7 +258,7 @@ export const demoArticles: Article[] = [
     location: "Jamshedpur",
     desk: "jamshedpur",
     mins: 1500,
-    image: ["jharkhand-hills", "Illustration of layered green hills"],
+    image: "jam-marine-drive",
     priority: 52,
   }),
   // ---------------------------------------------------------------- RANCHI
@@ -278,7 +272,7 @@ export const demoArticles: Article[] = [
     location: "Ranchi",
     desk: "ranchi",
     mins: 70,
-    image: ["ranchi-skyline", "Illustration of a city skyline"],
+    image: "ran-skyline",
     priority: 88,
     takeaways: [
       "Five junctions are identified for signal upgrades.",
@@ -297,7 +291,7 @@ export const demoArticles: Article[] = [
     location: "Ranchi",
     desk: "ranchi",
     mins: 180,
-    image: ["ranchi-market", "Illustration of market stalls with awnings"],
+    image: "ran-covered-market",
     priority: 68,
   }),
   article({
@@ -311,7 +305,7 @@ export const demoArticles: Article[] = [
     location: "Ranchi",
     desk: "ranchi",
     mins: 330,
-    image: ["jharkhand-classroom", "Illustration of books standing on a shelf"],
+    image: "ran-library",
     priority: 62,
   }),
   article({
@@ -324,7 +318,7 @@ export const demoArticles: Article[] = [
     location: "Ranchi",
     desk: "ranchi",
     mins: 900,
-    image: ["ranchi-hills", "Illustration of forested hills"],
+    image: "ran-waterfall",
     priority: 55,
   }),
   article({
@@ -338,7 +332,7 @@ export const demoArticles: Article[] = [
     location: "Ranchi",
     desk: "ranchi",
     mins: 1300,
-    image: ["ranchi-civic", "Illustration of a public building with columns"],
+    image: "ran-lake",
     priority: 57,
   }),
   // ---------------------------------------------------------------- OTHER JHARKHAND DISTRICTS
@@ -353,7 +347,7 @@ export const demoArticles: Article[] = [
     location: "Dhanbad",
     desk: "jharkhand",
     mins: 280,
-    image: ["jharkhand-mining", "Illustration of an industrial landscape"],
+    image: "dhn-jharia",
     priority: 67,
   }),
   article({
@@ -367,7 +361,7 @@ export const demoArticles: Article[] = [
     location: "Bokaro",
     desk: "jharkhand",
     mins: 620,
-    image: ["education-books", "Illustration of books"],
+    image: "bok-science-lab",
     priority: 60,
   }),
   article({
@@ -381,7 +375,7 @@ export const demoArticles: Article[] = [
     location: "Hazaribagh",
     desk: "jharkhand",
     mins: 840,
-    image: ["jharkhand-hills", "Illustration of farmland and hills"],
+    image: "haz-drip",
     priority: 59,
   }),
   article({
@@ -394,7 +388,7 @@ export const demoArticles: Article[] = [
     location: "Deoghar",
     desk: "jharkhand",
     mins: 1100,
-    image: ["entertainment-stage", "Abstract illustration of light and colour"],
+    image: "deo-baidyanath",
     priority: 61,
   }),
   article({
@@ -407,7 +401,7 @@ export const demoArticles: Article[] = [
     location: "Giridih",
     desk: "jharkhand",
     mins: 1700,
-    image: ["up-road", "Illustration of a road stretching to the horizon"],
+    image: "gir-road-damage",
     priority: 50,
   }),
   // ---------------------------------------------------------------- BIHAR
@@ -420,7 +414,7 @@ export const demoArticles: Article[] = [
     location: "Patna",
     desk: "regional",
     mins: 120,
-    image: ["bihar-river", "Illustration of a wide river"],
+    image: "bih-ganga-bridge",
     priority: 76,
   }),
   article({
@@ -433,7 +427,7 @@ export const demoArticles: Article[] = [
     location: "Patna",
     desk: "regional",
     mins: 480,
-    image: ["bihar-civic", "Illustration of a public building"],
+    image: "bih-patna",
     priority: 63,
   }),
   article({
@@ -446,7 +440,7 @@ export const demoArticles: Article[] = [
     desk: "regional",
     mins: 1020,
     format: "explainer",
-    image: ["bihar-rail", "Illustration of converging tracks"],
+    image: "bih-bus",
     priority: 54,
   }),
   // ---------------------------------------------------------------- ODISHA
@@ -459,7 +453,7 @@ export const demoArticles: Article[] = [
     location: "Bhubaneswar",
     desk: "regional",
     mins: 200,
-    image: ["odisha-coast", "Illustration of a coastline"],
+    image: "odi-puri-boats",
     priority: 74,
   }),
   article({
@@ -472,7 +466,7 @@ export const demoArticles: Article[] = [
     location: "Cuttack",
     desk: "regional",
     mins: 760,
-    image: ["odisha-culture", "Abstract illustration of patterns"],
+    image: "odi-loom",
     priority: 58,
   }),
   // ---------------------------------------------------------------- WEST BENGAL
@@ -486,7 +480,7 @@ export const demoArticles: Article[] = [
     location: "Kolkata",
     desk: "regional",
     mins: 300,
-    image: ["bengal-market", "Illustration of market stalls"],
+    image: "wb-new-market",
     priority: 66,
   }),
   article({
@@ -499,7 +493,7 @@ export const demoArticles: Article[] = [
     location: "Durgapur",
     desk: "regional",
     mins: 980,
-    image: ["business-industry", "Illustration of industrial buildings"],
+    image: "wb-textile-mill",
     priority: 56,
   }),
   article({
@@ -512,7 +506,7 @@ export const demoArticles: Article[] = [
     location: "Kolkata",
     desk: "regional",
     mins: 1400,
-    image: ["bengal-city", "Illustration of an old city skyline"],
+    image: "wb-heritage",
     priority: 53,
   }),
   // ---------------------------------------------------------------- UTTAR PRADESH
@@ -526,7 +520,7 @@ export const demoArticles: Article[] = [
     location: "Lucknow",
     desk: "regional",
     mins: 240,
-    image: ["up-road", "Illustration of a highway"],
+    image: "up-expressway",
     priority: 69,
   }),
   article({
@@ -538,7 +532,7 @@ export const demoArticles: Article[] = [
     location: "Varanasi",
     desk: "regional",
     mins: 660,
-    image: ["up-civic", "Illustration of a civic building"],
+    image: "up-varanasi",
     priority: 57,
   }),
   article({
@@ -552,7 +546,7 @@ export const demoArticles: Article[] = [
     desk: "explainers",
     mins: 1250,
     format: "explainer",
-    image: ["education-books", "Illustration of books"],
+    image: "edu-campus",
     priority: 52,
   }),
   // ---------------------------------------------------------------- INDIA
@@ -565,7 +559,7 @@ export const demoArticles: Article[] = [
     desk: "explainers",
     mins: 140,
     format: "explainer",
-    image: ["india-rail", "Illustration of railway lines"],
+    image: "in-train",
     priority: 87,
     takeaways: [
       "Check your train number, not just its name — numbers can change.",
@@ -583,7 +577,7 @@ export const demoArticles: Article[] = [
     desk: "explainers",
     mins: 360,
     format: "explainer",
-    image: ["india-monsoon", "Illustration of rain clouds over hills"],
+    image: "in-mustard",
     priority: 71,
   }),
   article({
@@ -595,7 +589,7 @@ export const demoArticles: Article[] = [
     tags: ["Digital payments", "Small business"],
     desk: "national",
     mins: 580,
-    image: ["india-tech", "Abstract illustration of circuitry"],
+    image: "in-street-vendor",
     priority: 65,
   }),
   article({
@@ -608,7 +602,7 @@ export const demoArticles: Article[] = [
     desk: "explainers",
     mins: 1600,
     format: "explainer",
-    image: ["india-civic", "Illustration of a parliament-style building"],
+    image: "in-parliament",
     priority: 60,
   }),
   // ---------------------------------------------------------------- BUSINESS
@@ -621,7 +615,7 @@ export const demoArticles: Article[] = [
     location: "Jamshedpur",
     desk: "business",
     mins: 170,
-    image: ["business-industry", "Illustration of industrial buildings"],
+    image: "biz-paper-mill",
     priority: 84,
   }),
   article({
@@ -633,7 +627,7 @@ export const demoArticles: Article[] = [
     location: "Ranchi",
     desk: "business",
     mins: 430,
-    image: ["business-market", "Illustration of market stalls"],
+    image: "biz-festive-lights",
     priority: 67,
   }),
   article({
@@ -646,7 +640,7 @@ export const demoArticles: Article[] = [
     location: "Dhanbad",
     desk: "business",
     mins: 800,
-    image: ["business-chart", "Illustration of a bar chart"],
+    image: "biz-calculator",
     priority: 61,
   }),
   article({
@@ -658,7 +652,7 @@ export const demoArticles: Article[] = [
     desk: "explainers",
     mins: 1900,
     format: "explainer",
-    image: ["business-chart-2", "Illustration of a line chart"],
+    image: "biz-calculator-display",
     priority: 55,
   }),
   article({
@@ -669,7 +663,7 @@ export const demoArticles: Article[] = [
     tags: ["Prices", "Household"],
     desk: "business",
     mins: 2300,
-    image: ["ranchi-market", "Illustration of a vegetable market"],
+    image: "biz-vegetables",
     priority: 51,
   }),
   // ---------------------------------------------------------------- SPORTS
@@ -682,7 +676,7 @@ export const demoArticles: Article[] = [
     location: "Simdega",
     desk: "sports",
     mins: 190,
-    image: ["sports-hockey", "Illustration of a sports field"],
+    image: "sp-hockey",
     priority: 83,
   }),
   article({
@@ -695,7 +689,7 @@ export const demoArticles: Article[] = [
     location: "Jamshedpur",
     desk: "sports",
     mins: 390,
-    image: ["sports-cricket", "Illustration of a cricket ground"],
+    image: "sp-cricket",
     priority: 69,
   }),
   article({
@@ -707,7 +701,7 @@ export const demoArticles: Article[] = [
     location: "Ranchi",
     desk: "sports",
     mins: 690,
-    image: ["sports-football", "Illustration of a football pitch"],
+    image: "sp-football",
     priority: 62,
   }),
   article({
@@ -719,7 +713,7 @@ export const demoArticles: Article[] = [
     location: "Gumla",
     desk: "sports",
     mins: 1180,
-    image: ["sports-athletics", "Illustration of a running track"],
+    // No photo: renders the branded placeholder (deliberate, explainer without a scene).
     priority: 56,
   }),
   article({
@@ -732,7 +726,7 @@ export const demoArticles: Article[] = [
     location: "Ranchi",
     desk: "sports",
     mins: 2600,
-    image: ["jharkhand-hills", "Illustration of hills"],
+    image: "sp-archer",
     priority: 58,
   }),
   // ---------------------------------------------------------------- POLITICS / EDUCATION / HEALTH / ENTERTAINMENT / TECH
@@ -745,7 +739,7 @@ export const demoArticles: Article[] = [
     desk: "explainers",
     mins: 1000,
     format: "explainer",
-    image: ["politics-civic", "Illustration of a civic building"],
+    image: "pol-polling-station",
     priority: 59,
   }),
   article({
@@ -757,7 +751,7 @@ export const demoArticles: Article[] = [
     desk: "explainers",
     mins: 3100,
     format: "explainer",
-    image: ["india-civic", "Illustration of a public building"],
+    image: "pol-evm",
     priority: 50,
   }),
   article({
@@ -769,7 +763,7 @@ export const demoArticles: Article[] = [
     desk: "explainers",
     mins: 1450,
     format: "explainer",
-    image: ["jharkhand-classroom", "Illustration of books"],
+    // No photo: renders the branded placeholder (deliberate, explainer without a scene).
     priority: 57,
   }),
   article({
@@ -781,7 +775,7 @@ export const demoArticles: Article[] = [
     desk: "explainers",
     mins: 870,
     format: "explainer",
-    image: ["health-care", "Abstract illustration representing healthcare"],
+    image: "hea-mosquito",
     priority: 63,
   }),
   article({
@@ -793,7 +787,7 @@ export const demoArticles: Article[] = [
     location: "Ranchi",
     desk: "newsroom",
     mins: 1350,
-    image: ["entertainment-stage", "Abstract illustration of stage lights"],
+    image: "ent-cinema",
     priority: 56,
   }),
   article({
@@ -804,7 +798,7 @@ export const demoArticles: Article[] = [
     tags: ["Music", "Culture"],
     desk: "newsroom",
     mins: 2900,
-    image: ["odisha-culture", "Abstract illustration of patterns"],
+    image: "ent-dance",
     priority: 50,
   }),
   article({
@@ -816,7 +810,7 @@ export const demoArticles: Article[] = [
     desk: "newsroom",
     mins: 2000,
     format: "analysis",
-    image: ["technology-circuit", "Abstract illustration of circuitry"],
+    image: "tech-tower",
     priority: 58,
   }),
 ];

@@ -1,0 +1,971 @@
+{
+  "jh-spillway": {
+    "src": "/images/news/jh-spillway.jpg",
+    "width": 2000,
+    "height": 1123,
+    "alt": "Water pouring over the gates of a dam spillway in heavy flow",
+    "caption": "Water released from a dam spillway during the monsoon",
+    "focal": "50% 55%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Dimna Dam during monsoon season.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Dimna_Dam_during_monsoon_season.jpg",
+      "author": "Sbmurmu09",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "attributionRequired": true
+    }
+  },
+  "jh-ambulance": {
+    "src": "/images/news/jh-ambulance.jpg",
+    "width": 1600,
+    "height": 900,
+    "alt": "A patient-transport ambulance parked on a roadside",
+    "caption": "A patient-transport ambulance",
+    "focal": "50% 60%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Police hospital ambulance in Bhopal, India.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Police_hospital_ambulance_in_Bhopal,_India.jpg",
+      "author": "Suyash.dwivedi",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "jh-tatanagar": {
+    "src": "/images/news/jh-tatanagar.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "Tatanagar railway station building lit up at night",
+    "caption": "Tatanagar Junction at night",
+    "focal": "50% 50%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Tatanagar Junction railway station IMG 20200104 055531 03.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Tatanagar_Junction_railway_station_IMG_20200104_055531_03.jpg",
+      "author": "Sumita Roy Dutta",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "jh-dokra": {
+    "src": "/images/news/jh-dokra.jpg",
+    "width": 1600,
+    "height": 1092,
+    "alt": "Dokra metal-cast deer figurines on display",
+    "caption": "Dokra metal craft figurines",
+    "focal": "40% 60%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Dokra from tribes of Bastar DSCN1172 03.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Dokra_from_tribes_of_Bastar_DSCN1172_03.jpg",
+      "author": "Sumita Roy Dutta",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "jam-subarnarekha": {
+    "src": "/images/news/jam-subarnarekha.jpg",
+    "width": 1600,
+    "height": 768,
+    "alt": "The Subarnarekha river flowing past green hills",
+    "caption": "The Subarnarekha river",
+    "focal": "50% 55%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Subarnarekha River, Ghatshila.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Subarnarekha_River,_Ghatshila.jpg",
+      "author": "4T15.D3",
+      "licence": "CC0",
+      "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "attributionRequired": false
+    }
+  },
+  "jam-market-lane": {
+    "src": "/images/news/jam-market-lane.jpg",
+    "width": 1600,
+    "height": 1201,
+    "alt": "A covered market lane lined with shops selling bags and household goods",
+    "caption": "A covered market lane",
+    "focal": "50% 50%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Sakchi main market, in Jamshedpur (226).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Sakchi_main_market,_in_Jamshedpur_(226).jpg",
+      "author": "ᱤᱧ ᱢᱟᱛᱟᱞ",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "jam-steel-skyline": {
+    "src": "/images/news/jam-steel-skyline.jpg",
+    "width": 1600,
+    "height": 1067,
+    "alt": "Chimneys of a steel plant across a lake in Jamshedpur",
+    "caption": "Industrial skyline across the water in Jamshedpur",
+    "focal": "55% 55%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Bokaro Steel Plant .jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Bokaro_Steel_Plant_.jpg",
+      "author": "Asifiqbal92",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "jam-blast-furnace": {
+    "src": "/images/news/jam-blast-furnace.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "A blast furnace structure at a steel works",
+    "caption": "A blast furnace at a steel works",
+    "focal": "50% 45%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Bokaro Steel Plant.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Bokaro_Steel_Plant.jpg",
+      "author": "SuLTan0203",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "attributionRequired": true
+    }
+  },
+  "jam-computer-lab": {
+    "src": "/images/news/jam-computer-lab.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "Students working at computers in a college computer lab",
+    "caption": "A college computer lab",
+    "focal": "50% 50%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "VignanDegreeCollegeComputerLab.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:VignanDegreeCollegeComputerLab.jpg",
+      "author": "Arjuna Rao Chavala",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "jam-jubilee-park": {
+    "src": "/images/news/jam-jubilee-park.jpg",
+    "width": 1600,
+    "height": 900,
+    "alt": "Fountains and lawns at Jubilee Park, Jamshedpur",
+    "caption": "Jubilee Park, Jamshedpur",
+    "focal": "50% 60%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "A view of jamshedpur jubilee park.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:A_view_of_jamshedpur_jubilee_park.jpg",
+      "author": "Mohitjamshedpurian",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "jam-marine-drive": {
+    "src": "/images/news/jam-marine-drive.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "Marine Drive in Jamshedpur along the river at dusk",
+    "caption": "Marine Drive, Jamshedpur, at dusk",
+    "focal": "45% 55%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Jamshedpur's Marine Drive.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Jamshedpur%27s_Marine_Drive.jpg",
+      "author": "Soham Banerjee",
+      "licence": "CC BY 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+      "attributionRequired": true
+    }
+  },
+  "ran-skyline": {
+    "src": "/images/news/ran-skyline.jpg",
+    "width": 1600,
+    "height": 1063,
+    "alt": "Ranchi city seen from a hilltop with a tall communications tower",
+    "caption": "Ranchi seen from above",
+    "focal": "50% 55%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Ranchi 9238.JPG",
+      "url": "https://commons.wikimedia.org/wiki/File:Ranchi_9238.JPG",
+      "author": "Biswarup Ganguly",
+      "licence": "CC BY 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/3.0",
+      "attributionRequired": true
+    }
+  },
+  "ran-lake": {
+    "src": "/images/news/ran-lake.jpg",
+    "width": 1600,
+    "height": 902,
+    "alt": "Ranchi lake at sunset with a statue silhouetted by the water",
+    "caption": "Ranchi lake at sunset",
+    "focal": "50% 50%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Ranchi lake.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Ranchi_lake.jpg",
+      "author": "Shubjt",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "ran-covered-market": {
+    "src": "/images/news/ran-covered-market.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "A covered market with vegetable stalls and shoppers",
+    "caption": "A covered vegetable market",
+    "focal": "50% 55%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Vegetable market Hyderabad.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Vegetable_market_Hyderabad.jpg",
+      "author": "fraboof",
+      "licence": "CC BY-SA 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "attributionRequired": true
+    }
+  },
+  "ran-library": {
+    "src": "/images/news/ran-library.jpg",
+    "width": 1600,
+    "height": 1065,
+    "alt": "Tall shelves of books in a library reading room",
+    "caption": "A library reading room",
+    "focal": "50% 45%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Rammohun Library and Free Reading Room - Main Reading Room (3).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Rammohun_Library_and_Free_Reading_Room_-_Main_Reading_Room_(3).jpg",
+      "author": "Sumitsurai",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "ran-waterfall": {
+    "src": "/images/news/ran-waterfall.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "A waterfall cascading over rocks into a pool near Ranchi",
+    "caption": "A waterfall near Ranchi",
+    "focal": "50% 50%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Hundru Falls, Jharkhand, India 9.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Hundru_Falls,_Jharkhand,_India_9.jpg",
+      "author": "Kingshuk Mondal",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+      "attributionRequired": true
+    }
+  },
+  "dhn-jharia": {
+    "src": "/images/news/dhn-jharia.jpg",
+    "width": 1600,
+    "height": 1067,
+    "alt": "An open-cast coal mine in the Jharia coalfield seen from above",
+    "caption": "Open-cast mining in the Jharia coalfield",
+    "focal": "50% 50%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Open pit mine in Jharia.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Open_pit_mine_in_Jharia.jpg",
+      "author": "international accountability project from Brooklyn, United States",
+      "licence": "CC BY 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/2.0",
+      "attributionRequired": true
+    }
+  },
+  "bok-science-lab": {
+    "src": "/images/news/bok-science-lab.jpg",
+    "width": 1600,
+    "height": 1067,
+    "alt": "An empty science laboratory with benches and equipment",
+    "caption": "A science laboratory",
+    "focal": "50% 50%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Kodaikanal International School-04685.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Kodaikanal_International_School-04685.jpg",
+      "author": "Rainer Halama",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "haz-drip": {
+    "src": "/images/news/haz-drip.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "Rows of young crops watered by drip irrigation lines",
+    "caption": "Crops under drip irrigation",
+    "focal": "50% 50%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Button dripper.JPG",
+      "url": "https://commons.wikimedia.org/wiki/File:Button_dripper.JPG",
+      "author": "Borisshin",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "deo-baidyanath": {
+    "src": "/images/news/deo-baidyanath.jpg",
+    "width": 1600,
+    "height": 925,
+    "alt": "White temple spires in Deoghar under a cloudy sky with crowds below",
+    "caption": "Temple spires in Deoghar",
+    "focal": "50% 40%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Baidyanath temple and temple complex, Deoghar 11.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Baidyanath_temple_and_temple_complex,_Deoghar_11.jpg",
+      "author": "Pinakpani",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+      "attributionRequired": true
+    }
+  },
+  "gir-road-damage": {
+    "src": "/images/news/gir-road-damage.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "A rural road broken and washed out by heavy rain",
+    "caption": "A rain-damaged rural road",
+    "focal": "50% 60%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Corruption or Nexus.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Corruption_or_Nexus.jpg",
+      "author": "Atulburnwal",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "attributionRequired": true
+    }
+  },
+  "bih-ganga-bridge": {
+    "src": "/images/news/bih-ganga-bridge.jpg",
+    "width": 1600,
+    "height": 990,
+    "alt": "A long bridge across the Ganga at sunset",
+    "caption": "A bridge across the Ganga at sunset",
+    "focal": "55% 50%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Sunset view of Ganga Ghat.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Sunset_view_of_Ganga_Ghat.jpg",
+      "author": "Summit Kumar Shaurya",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "bih-patna": {
+    "src": "/images/news/bih-patna.jpg",
+    "width": 1600,
+    "height": 1067,
+    "alt": "Patna city skyline with buildings among trees",
+    "caption": "Patna skyline",
+    "focal": "50% 50%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "View of Patna city from the top of Golghar.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:View_of_Patna_city_from_the_top_of_Golghar.jpg",
+      "author": "Nandanupadhyay",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "attributionRequired": true
+    }
+  },
+  "bih-bus": {
+    "src": "/images/news/bih-bus.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "A red and cream double-decker state transport bus",
+    "caption": "A state transport double-decker bus",
+    "focal": "50% 55%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Double Decker Bus Angamaly BUS STAND.JPG",
+      "url": "https://commons.wikimedia.org/wiki/File:Double_Decker_Bus_Angamaly_BUS_STAND.JPG",
+      "author": "Ranjithsiji",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "attributionRequired": true
+    }
+  },
+  "odi-puri-boats": {
+    "src": "/images/news/odi-puri-boats.jpg",
+    "width": 1600,
+    "height": 1067,
+    "alt": "Fishing boats pulled up on the beach at Puri, Odisha",
+    "caption": "Fishing boats on the beach at Puri",
+    "focal": "50% 60%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "At Puri beach 05.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:At_Puri_beach_05.jpg",
+      "author": "Kritzolina",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "odi-loom": {
+    "src": "/images/news/odi-loom.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "A patterned fabric being woven on a handloom",
+    "caption": "Weaving on a handloom",
+    "focal": "50% 50%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Pata Bandhi.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Pata_Bandhi.jpg",
+      "author": "Saileshpat",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "wb-new-market": {
+    "src": "/images/news/wb-new-market.jpg",
+    "width": 1600,
+    "height": 1110,
+    "alt": "The red-brick facade and clock tower of New Market, Kolkata",
+    "caption": "New Market, Kolkata",
+    "focal": "50% 50%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Calcutta New Market (14652777729).jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Calcutta_New_Market_(14652777729).jpg",
+      "author": "Paul Hamilton",
+      "licence": "CC BY-SA 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "attributionRequired": true
+    }
+  },
+  "wb-heritage": {
+    "src": "/images/news/wb-heritage.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "An ornate old building facade in Kolkata",
+    "caption": "A heritage building in Kolkata",
+    "focal": "50% 45%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Star theatre, a heritage building in North Kolkata 01.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Star_theatre,_a_heritage_building_in_North_Kolkata_01.jpg",
+      "author": "Pinakpani",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "wb-textile-mill": {
+    "src": "/images/news/wb-textile-mill.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "Rows of machines on the floor of a textile mill",
+    "caption": "A textile mill floor",
+    "focal": "50% 50%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Textile manufacturing in Meerut, India.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Textile_manufacturing_in_Meerut,_India.jpg",
+      "author": "Ravi Dwivedi",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "up-expressway": {
+    "src": "/images/news/up-expressway.jpg",
+    "width": 1600,
+    "height": 830,
+    "alt": "An empty multi-lane expressway lined with arched street lamps",
+    "caption": "An expressway in Uttar Pradesh",
+    "focal": "50% 55%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Agra-Lucknow Expressway 00D2E99F-74F0-4EAF-924A-BA7AFD5C1EA9.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Agra-Lucknow_Expressway_00D2E99F-74F0-4EAF-924A-BA7AFD5C1EA9.jpg",
+      "author": "HarshY17",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "up-varanasi": {
+    "src": "/images/news/up-varanasi.jpg",
+    "width": 1600,
+    "height": 1116,
+    "alt": "Riverside ghats and old buildings along the Ganga in Varanasi",
+    "caption": "The ghats of Varanasi",
+    "focal": "50% 55%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Varanasi Munshi Ghat3.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Varanasi_Munshi_Ghat3.jpg",
+      "author": "Marcin Białek",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "attributionRequired": true
+    }
+  },
+  "in-train": {
+    "src": "/images/news/in-train.jpg",
+    "width": 1600,
+    "height": 900,
+    "alt": "Coaches of an Indian passenger train running through green countryside",
+    "caption": "A passenger train in the countryside",
+    "focal": "40% 50%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "A view from Indian Railways Train.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:A_view_from_Indian_Railways_Train.jpg",
+      "author": "Vikramaditya V. V.",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "in-locomotive": {
+    "src": "/images/news/in-locomotive.jpg",
+    "width": 1600,
+    "height": 1205,
+    "alt": "An Indian Railways electric locomotive hauling a train",
+    "caption": "An Indian Railways locomotive",
+    "focal": "50% 55%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Indian Railways Train in 2025.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Indian_Railways_Train_in_2025.jpg",
+      "author": "Ash7876",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+      "attributionRequired": true
+    }
+  },
+  "in-mustard": {
+    "src": "/images/news/in-mustard.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "A yellow mustard field in bloom with a path through it",
+    "caption": "A mustard field in bloom",
+    "focal": "50% 60%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Aloona Tola (mustard in wheat field ).JPG",
+      "url": "https://commons.wikimedia.org/wiki/File:Aloona_Tola_(mustard_in_wheat_field_).JPG",
+      "author": "D.aspis9394",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "attributionRequired": true
+    }
+  },
+  "in-parliament": {
+    "src": "/images/news/in-parliament.jpg",
+    "width": 1600,
+    "height": 1053,
+    "alt": "Parliament House in New Delhi behind gardens",
+    "caption": "Parliament House, New Delhi",
+    "focal": "50% 55%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Sansad Bhavan, Delhi, BNK.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Sansad_Bhavan,_Delhi,_BNK.jpg",
+      "author": "Nikhilb239",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "in-street-vendor": {
+    "src": "/images/news/in-street-vendor.jpg",
+    "width": 1600,
+    "height": 1243,
+    "alt": "A fruit vendor's cart lit up at night on an Indian street",
+    "caption": "A fruit vendor at night",
+    "focal": "50% 55%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "A Street Vendor in India.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:A_Street_Vendor_in_India.jpg",
+      "author": "Donvikro",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "biz-paper-mill": {
+    "src": "/images/news/biz-paper-mill.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "Heavy machinery on a factory floor",
+    "caption": "Machinery on a factory floor",
+    "focal": "50% 50%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Manufacturing of Corrugated Paper.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Manufacturing_of_Corrugated_Paper.jpg",
+      "author": "Ganesh Dhamodkar",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "biz-festive-lights": {
+    "src": "/images/news/biz-festive-lights.jpg",
+    "width": 1600,
+    "height": 1205,
+    "alt": "A busy street market strung with festive lights at night",
+    "caption": "A market street lit for the festive season",
+    "focal": "50% 50%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Diwali Night - Market.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Diwali_Night_-_Market.jpg",
+      "author": "Aditijuneja2023",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "biz-calculator": {
+    "src": "/images/news/biz-calculator.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "Close-up of calculator keys",
+    "caption": "Calculator keys",
+    "focal": "50% 50%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Aurora electronic calculator DT210 05.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Aurora_electronic_calculator_DT210_05.jpg",
+      "author": "Coyau",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "attributionRequired": true
+    }
+  },
+  "biz-calculator-display": {
+    "src": "/images/news/biz-calculator-display.jpg",
+    "width": 1600,
+    "height": 800,
+    "alt": "Close-up of a calculator display showing numbers",
+    "caption": "A calculator display",
+    "focal": "50% 50%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Aurora electronic calculator DT210 08.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Aurora_electronic_calculator_DT210_08.jpg",
+      "author": "Coyau",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "attributionRequired": true
+    }
+  },
+  "biz-vegetables": {
+    "src": "/images/news/biz-vegetables.jpg",
+    "width": 1600,
+    "height": 1067,
+    "alt": "Piles of fresh vegetables for sale at a market",
+    "caption": "Vegetables for sale",
+    "focal": "50% 50%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Vegetables at vegetable market, Havelock Island, Andamans.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Vegetables_at_vegetable_market,_Havelock_Island,_Andamans.jpg",
+      "author": "Vyacheslav Argenberg",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+      "attributionRequired": true
+    }
+  },
+  "sp-hockey": {
+    "src": "/images/news/sp-hockey.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "A hockey match under way on blue turf at Kalinga Stadium, Bhubaneswar",
+    "caption": "A hockey match at Kalinga Stadium, Bhubaneswar",
+    "focal": "50% 60%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Kalinga Stadium1.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Kalinga_Stadium1.jpg",
+      "author": "Hellohappy",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "attributionRequired": true
+    }
+  },
+  "sp-cricket": {
+    "src": "/images/news/sp-cricket.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "A cricket match in progress on a wide ground",
+    "caption": "A cricket match in progress",
+    "focal": "50% 60%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "England v India at the SWALEC Stadium Cardiff 2014.JPG",
+      "url": "https://commons.wikimedia.org/wiki/File:England_v_India_at_the_SWALEC_Stadium_Cardiff_2014.JPG",
+      "author": "HLloyd8",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "sp-cricket-ground": {
+    "src": "/images/news/sp-cricket-ground.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "A cricket ground and pitch with stands behind",
+    "caption": "A cricket ground",
+    "focal": "50% 60%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Open of 2nd test Aus v India 2011-12 series.JPG",
+      "url": "https://commons.wikimedia.org/wiki/File:Open_of_2nd_test_Aus_v_India_2011-12_series.JPG",
+      "author": "Wittylama",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "attributionRequired": true
+    }
+  },
+  "sp-football": {
+    "src": "/images/news/sp-football.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "A local football match on a tree-lined ground",
+    "caption": "A local football match",
+    "focal": "50% 60%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "An ongoing football match of students in West Bengal, India.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:An_ongoing_football_match_of_students_in_West_Bengal,_India.jpg",
+      "author": "Billjones94",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "sp-archer": {
+    "src": "/images/news/sp-archer.jpg",
+    "width": 1600,
+    "height": 1067,
+    "alt": "An archer drawing a bow, silhouetted against the setting sun",
+    "caption": "An archer at sunset",
+    "focal": "45% 50%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Vardi uday kumar.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Vardi_uday_kumar.jpg",
+      "author": "Vijayasarchery",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "pol-polling-station": {
+    "src": "/images/news/pol-polling-station.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "Voters outside a polling station building",
+    "caption": "Outside a polling station",
+    "focal": "50% 55%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Meghalaya 2023 election polling station.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Meghalaya_2023_election_polling_station.jpg",
+      "author": "GeoEvan (www.polgeonow.com)",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+      "attributionRequired": true
+    }
+  },
+  "pol-evm": {
+    "src": "/images/news/pol-evm.jpg",
+    "width": 1600,
+    "height": 900,
+    "alt": "A gloved hand operating an electronic voting machine",
+    "caption": "An electronic voting machine",
+    "focal": "50% 50%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Contr Unit of Electronic Voting Machine 2.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Contr_Unit_of_Electronic_Voting_Machine_2.jpg",
+      "author": "Shagil Kannur",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "edu-campus": {
+    "src": "/images/news/edu-campus.jpg",
+    "width": 1600,
+    "height": 900,
+    "alt": "A college campus building with a landscaped lawn",
+    "caption": "A college campus",
+    "focal": "50% 55%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Dolphin pg college drone shot from the front of the college.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Dolphin_pg_college_drone_shot_from_the_front_of_the_college.jpg",
+      "author": "Poonam khankriyal",
+      "licence": "CC0",
+      "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+      "attributionRequired": false
+    }
+  },
+  "hea-mosquito": {
+    "src": "/images/news/hea-mosquito.jpg",
+    "width": 1600,
+    "height": 1268,
+    "alt": "Close-up of an Aedes mosquito on skin",
+    "caption": "An Aedes mosquito, the species that spreads dengue",
+    "focal": "50% 50%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Aedes aegypti biting human.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Aedes_aegypti_biting_human.jpg",
+      "author": "US Department of Agriculture",
+      "licence": "Public domain",
+      "licenceUrl": "",
+      "attributionRequired": false
+    }
+  },
+  "ent-cinema": {
+    "src": "/images/news/ent-cinema.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "Rows of empty seats in a cinema auditorium",
+    "caption": "An empty cinema auditorium",
+    "focal": "50% 60%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "New Empire Cinema Hall MB08.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:New_Empire_Cinema_Hall_MB08.jpg",
+      "author": "Marajozkee",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0",
+      "attributionRequired": true
+    }
+  },
+  "ent-dance": {
+    "src": "/images/news/ent-dance.jpg",
+    "width": 1600,
+    "height": 951,
+    "alt": "Folk dancers performing on stage at a tribal festival",
+    "caption": "Folk dancers at a tribal festival",
+    "focal": "50% 55%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Firkal slowly decaying martial dance of ChotaNagpur of Jharkhand IMG 1069 05.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Firkal_slowly_decaying_martial_dance_of_ChotaNagpur_of_Jharkhand_IMG_1069_05.jpg",
+      "author": "Sumita Roy Dutta",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "ent-dance-2": {
+    "src": "/images/news/ent-dance-2.jpg",
+    "width": 1600,
+    "height": 860,
+    "alt": "Dancers in traditional dress performing on a lit stage",
+    "caption": "A folk dance performance",
+    "focal": "50% 55%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Firkal slowly decaying martial dance of ChotaNagpur of Jharkhand performed at Central Park Delhi IMG 0934 05.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Firkal_slowly_decaying_martial_dance_of_ChotaNagpur_of_Jharkhand_performed_at_Central_Park_Delhi_IMG_0934_05.jpg",
+      "author": "Sumita Roy Dutta",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "tech-tower": {
+    "src": "/images/news/tech-tower.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "A telecom tower silhouetted against the setting sun",
+    "caption": "A telecom tower at sunset",
+    "focal": "60% 50%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Sleeping Sun.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Sleeping_Sun.jpg",
+      "author": "Adityasingh9012",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "vid-meters": {
+    "src": "/images/news/vid-meters.jpg",
+    "width": 1600,
+    "height": 1067,
+    "alt": "A row of electricity meters mounted on a wall",
+    "caption": "Electricity meters",
+    "focal": "50% 50%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Electricity meters in India.JPG",
+      "url": "https://commons.wikimedia.org/wiki/File:Electricity_meters_in_India.JPG",
+      "author": "Balaji Kasirajan",
+      "licence": "CC BY-SA 3.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+      "attributionRequired": true
+    }
+  },
+  "vid-clouds": {
+    "src": "/images/news/vid-clouds.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "Dark monsoon clouds gathering over palm trees",
+    "caption": "Monsoon clouds",
+    "focal": "50% 50%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Goa, India. Rain clouds. The monsoons hit the region in June.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Goa,_India._Rain_clouds._The_monsoons_hit_the_region_in_June.jpg",
+      "author": "Fredericknoronha",
+      "licence": "CC BY-SA 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+      "attributionRequired": true
+    }
+  },
+  "vid-street-market": {
+    "src": "/images/news/vid-street-market.jpg",
+    "width": 1600,
+    "height": 1200,
+    "alt": "A street market with vegetable stalls under blue awnings",
+    "caption": "A street market",
+    "focal": "50% 50%",
+    "source": {
+      "name": "Wikimedia Commons",
+      "title": "Hyderabad Vegetable Market 2007.jpg",
+      "url": "https://commons.wikimedia.org/wiki/File:Hyderabad_Vegetable_Market_2007.jpg",
+      "author": "fraboof",
+      "licence": "CC BY-SA 2.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+      "attributionRequired": true
+    }
+  }
+}
