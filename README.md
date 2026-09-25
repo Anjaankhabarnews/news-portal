@@ -4,7 +4,7 @@
 
 Built with Next.js 16 (App Router), React 19, TypeScript and Tailwind CSS 4. It has a Supabase-ready data layer and deploys to a Hostinger VPS.
 
-> **Status: design preview.** Until Supabase is connected, the site runs on clearly labelled **demo content**:
+> **Status: connected to Supabase, awaiting first stories.** With `CONTENT_SOURCE=demo` (or without Supabase), the site runs on clearly labelled **demo content**:
 > - Stories are fictional, attributed to newsroom desks, and name no real people.
 > - Images are abstract illustrations marked "DEMO IMAGE".
 > - A notice bar sits on every page.
@@ -64,7 +64,7 @@ src/
     article/                Article view, body renderer, share, view beacon
     ads/                    <AdSlot/>, placement specs, AdSense unit
     seo/                    JSON-LD (NewsArticle, BreadcrumbList, Organization, WebSite, VideoObject)
-supabase/schema.sql         Database schema, Row Level Security, storage buckets
+supabase/migrations/        Schema, RLS, storage buckets, seed data (applied in order)
 scripts/generate-demo-images.mjs
 ```
 
@@ -81,16 +81,23 @@ scripts/generate-demo-images.mjs
 
 ## Content and Supabase
 
-Pages never query a database directly. They call `src/lib/data`, which uses the **demo source** until Supabase environment variables are set, then switches to the **Supabase source** automatically.
+Pages never query a database directly. They call `src/lib/data`, which uses **Supabase** when it is configured and the built-in **demo stories** otherwise. Set `CONTENT_SOURCE=demo` to preview the design with demo stories at any time. With an empty database, the homepage shows a "newsroom is getting ready" launch state.
 
-1. Create a Supabase project and run `supabase/schema.sql` in the SQL editor. This creates:
-   - The tables: articles, sections, localities, authors, media, tags, breaking_news, videos, homepage_sections, advertisements, social_links, news_tips and article_views.
-   - Row Level Security on every table.
-   - Two storage buckets: a public `media` bucket and a private `tips` bucket.
-2. Copy `.env.example` to `.env.local` and fill in the values:
-   - `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`: public, and safe only because RLS is on.
-   - `SUPABASE_SERVICE_ROLE_KEY`: **server-only**. It is used for news-tip inserts and signed uploads. Never prefix it with `NEXT_PUBLIC_`.
-3. Add newsroom staff to `newsroom_members` with a role (`admin`, `editor`, `reporter` or `ad_manager`). RLS enforces permissions on the server.
+**Live project:** `anjaan-khabar`, in the Mumbai region (`ap-south-1`), URL `https://wibghxlzcksqcujolddr.supabase.co`. Migrations `0001`–`0004` in `supabase/migrations/` are already applied:
+
+- **0001: schema.** Tables for articles, sections, localities, authors, media, tags, breaking_news, videos, homepage_sections, advertisements, social_links, news_tips and article_views. Row Level Security is on every table. Two storage buckets: a public `media` bucket and a private `tips` bucket.
+- **0002: reference data.** The 13 sections, 24 Jharkhand localities, 9 newsroom desks and the official social links. It's generated from `taxonomy.ts` by `node --experimental-strip-types scripts/generate-seed.mjs`.
+- **0003: security hardening.** Role checks and trending logic move to a `private` schema the API doesn't expose. Only a trending rank is exposed, never view counts.
+- **0004: performance.** Foreign-key indexes, and `auth.uid()` is evaluated once per query instead of once per row.
+
+The Supabase security advisor reports no issues.
+
+For a new environment, apply the migrations in order in the SQL editor. Then set these environment variables:
+
+- `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`: the publishable key. It's safe in the browser because RLS is on.
+- `SUPABASE_SERVICE_ROLE_KEY`: **server-only**, used for news-tip inserts and signed uploads. Copy it from Dashboard → Project Settings → API Keys. Never prefix it with `NEXT_PUBLIC_`.
+
+Newsroom staff sign in with Supabase Auth and are added to `newsroom_members` with a role (`admin`, `editor`, `reporter` or `ad_manager`). RLS enforces permissions on the server.
 
 Security notes:
 

@@ -6,12 +6,48 @@ import { HomeState } from "@/components/home/home-state";
 import { SectionGrid, SectionWithRail, StatesRail, TopicColumns } from "@/components/home/sections";
 import { VideoBand } from "@/components/home/video-band";
 import { TipCta } from "@/components/news/tip-cta";
+import Link from "next/link";
+import { site } from "@/config/site";
+import { homeState, otherStateSections } from "@/config/taxonomy";
+
+function LaunchState() {
+  return (
+    <div className="container-page py-12 md:py-20">
+      <h1 className="sr-only">{site.name}</h1>
+      <div className="max-w-3xl">
+        <p className="t-kicker text-red">{site.tagline}</p>
+        <p className="t-h1 mt-2">Our newsroom is getting ready.</p>
+        <p className="t-dek mt-4 text-lg">
+          Reporting from Jamshedpur, Ranchi and across Jharkhand — and from Bihar, Odisha, West Bengal, Uttar Pradesh and India — will
+          appear here as soon as it is published.
+        </p>
+      </div>
+      <nav aria-label="Sections" className="mt-10">
+        <ul className="flex flex-wrap gap-2">
+          {[homeState, ...otherStateSections].map((s) => (
+            <li key={s.slug}>
+              <Link href={`/${s.slug}`} className="inline-flex min-h-11 items-center border border-line-strong px-4 font-semibold text-ink-2 hover:border-ink hover:text-ink">
+                {s.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      <div className="mt-12">
+        <TipCta />
+      </div>
+    </div>
+  );
+}
 
 /** Front page re-renders every 2 minutes; the daypart layout follows IST. */
 export const revalidate = 120;
 
 export default async function HomePage() {
   const { modules } = await loadHomepage();
+
+  // Nothing published yet (fresh database): a deliberate launch state, not empty modules.
+  if (!modules.some((m) => m.type === "hero")) return <LaunchState />;
 
   return (
     <>

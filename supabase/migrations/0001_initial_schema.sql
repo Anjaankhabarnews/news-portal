@@ -160,21 +160,22 @@ create table article_views (
 );
 create index article_views_recent_idx on article_views (viewed_at desc, article_id);
 
--- Aggregated trend scores (runs as owner so raw view rows stay private).
--- Recent views weigh 3x; the window is 48 hours. Scores are for ordering only
--- and are never displayed.
+-- Trending rank (runs as owner so raw view rows stay private). Recent views
+-- weigh 3x within a 48-hour window. Only the RANK is exposed — never counts.
 create view article_trends as
   select article_id,
-         count(*) filter (where viewed_at > now() - interval '6 hours') * 3 + count(*) as trend_score
+         row_number() over (
+           order by count(*) filter (where viewed_at > now() - interval '6 hours') * 3 + count(*) desc
+         ) as trend_rank
   from article_views
   where viewed_at > now() - interval '48 hours'
   group by article_id;
 
 create view most_read with (security_invoker = true) as
-  select pa.*, t.trend_score
+  select pa.*, t.trend_rank
   from published_articles pa
   join article_trends t on t.article_id = pa.id
-  order by t.trend_score desc;
+  order by t.trend_rank;
 
 -- ---------------------------------------------------------------------------
 -- Breaking news, videos, homepage, ads, social
@@ -338,6 +339,6 @@ values ('tips', 'tips', false, 52428800, array['image/jpeg','image/png','image/w
 on conflict do nothing;
 
 create policy "staff upload media" on storage.objects for insert
-  with check (bucket_id = 'media' and has_role('{admin,editor,reporter}'));
+  with check (bucket_id = 'media' and public.has_role('{admin,editor,reporter}'));
 create policy "editors read tips files" on storage.objects for select
-  using (bucket_id = 'tips' and has_role('{admin,editor}'));
+  using (bucket_id = 'tips' and public.has_role('{admin,editor}'));

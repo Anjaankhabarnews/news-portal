@@ -6,8 +6,13 @@ import { demoSource } from "./demo-source";
 import type { ArticleQuery, ContentSource, SearchQuery } from "./source";
 import { supabaseSource } from "./supabase-source";
 
-/** Demo content until Supabase credentials are provided. */
-const source: ContentSource = isSupabaseConfigured ? supabaseSource : demoSource;
+/**
+ * Supabase when configured, demo content otherwise.
+ * CONTENT_SOURCE=demo forces the demo stories (design previews); =supabase forces the database.
+ */
+const forced = process.env.CONTENT_SOURCE;
+const source: ContentSource =
+  forced === "demo" ? demoSource : forced === "supabase" || isSupabaseConfigured ? supabaseSource : demoSource;
 
 export const contentSourceName = source.name;
 

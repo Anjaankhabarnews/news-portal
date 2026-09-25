@@ -114,6 +114,11 @@ function fail(context: string, error: { message: string }): never {
   throw new Error(`[supabase] ${context}: ${error.message}`);
 }
 
+/** PostgREST answers 416 (PGRST103) for a page past the end — that is simply an empty page. */
+function isPastEnd(error: { code?: string }) {
+  return error.code === "PGRST103";
+}
+
 /* ---------------------------------------------------------------- source */
 
 export const supabaseSource: ContentSource = {
@@ -142,6 +147,7 @@ export const supabaseSource: ContentSource = {
     query = query.order("published_at", { ascending: false }).range(...range(page, pageSize));
 
     const { data, error, count } = await query;
+    if (error && isPastEnd(error)) return { items: [], total: count ?? 0, page, pageSize };
     if (error) fail("listArticles", error);
     return { items: (data as unknown as ArticleRow[]).map(toArticle), total: count ?? 0, page, pageSize };
   },
@@ -188,6 +194,7 @@ export const supabaseSource: ContentSource = {
     const { data, error, count } = await query
       .order("published_at", { ascending: false })
       .range(...range(page, pageSize));
+    if (error && isPastEnd(error)) return { items: [], total: count ?? 0, page, pageSize };
     if (error) fail("listVideos", error);
     return { items: (data as VideoRow[]).map(toVideo), total: count ?? 0, page, pageSize };
   },
@@ -253,8 +260,8 @@ export const supabaseSource: ContentSource = {
       const { data, error, count } = await query
         .order("published_at", { ascending: false })
         .range(...range(page, pageSize));
-      if (error) fail("search articles", error);
-      results.push(...(data as unknown as ArticleRow[]).map((r) => ({ kind: "article" as const, item: toArticle(r) })));
+      if (error && !isPastEnd(error)) fail("search articles", error);
+      results.push(...((data ?? []) as unknown as ArticleRow[]).map((r) => ({ kind: "article" as const, item: toArticle(r) })));
       total += count ?? 0;
     }
     if (type === "videos" || (type === "all" && page === 1)) {
