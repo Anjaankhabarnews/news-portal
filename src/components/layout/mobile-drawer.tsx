@@ -14,7 +14,7 @@ import { SocialLinks } from "./social-links";
  * Mobile menu as a native modal <dialog> (focus trap, Esc, inert background for free).
  * Sections are grouped so the drawer never becomes a 20-item dump.
  */
-export function MobileDrawer({ localities }: { localities: Locality[] }) {
+export function MobileDrawer({ localities, logo }: { localities: Locality[]; logo: React.ReactNode }) {
   const ref = useRef<HTMLDialogElement>(null);
   const pathname = usePathname();
   const [districtsOpen, setDistrictsOpen] = useState(false);
@@ -56,9 +56,9 @@ export function MobileDrawer({ localities }: { localities: Locality[] }) {
       }}
     >
       <div className="flex h-full flex-col">
-        <div className="flex h-14 shrink-0 items-center justify-between bg-navy-900 pl-5 text-white">
-          <p className="font-sans text-sm font-bold tracking-[0.14em] uppercase">Menu</p>
-          <button type="button" onClick={close} className="on-dark grid size-14 place-items-center hover:bg-white/10" aria-label="Close menu">
+        <div className="flex h-[var(--header-mobile-h)] shrink-0 items-center justify-between border-b-[3px] border-red bg-white pl-[calc(var(--gutter)-6px)] pr-1.5">
+          {logo}
+          <button type="button" onClick={close} className="grid size-11 place-items-center rounded-full text-navy-900 hover:bg-paper" aria-label="Close menu">
             <CloseIcon size={24} />
           </button>
         </div>

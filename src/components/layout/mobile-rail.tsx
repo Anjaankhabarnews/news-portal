@@ -25,7 +25,7 @@ export function MobileRail() {
   }, [pathname]);
 
   return (
-    <nav aria-label="Sections" className="relative border-b border-line bg-white lg:hidden">
+    <nav aria-label="Sections" className="on-dark relative bg-navy-900 lg:hidden">
       <ul ref={railRef} className="scroll-rail flex items-center gap-1 px-[calc(var(--gutter)-8px)]">
         {mobileRailNav.map((n) => {
           const isActive = n.href === active;
@@ -35,7 +35,7 @@ export function MobileRail() {
                 href={n.href}
                 aria-current={isActive ? "page" : undefined}
                 className={`relative flex h-11 items-center px-2 text-[0.9375rem] font-semibold whitespace-nowrap ${
-                  isActive ? "text-ink after:absolute after:inset-x-2 after:bottom-0 after:h-[3px] after:bg-red" : "text-ink-2"
+                  isActive ? "text-white after:absolute after:inset-x-2 after:bottom-0 after:h-[3px] after:bg-red" : "text-white/75"
                 }`}
               >
                 {n.label}
@@ -45,7 +45,7 @@ export function MobileRail() {
         })}
         <li className="w-2 shrink-0" aria-hidden />
       </ul>
-      <span className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-linear-to-l from-white" aria-hidden />
+      <span className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-linear-to-l from-navy-900" aria-hidden />
     </nav>
   );
 }

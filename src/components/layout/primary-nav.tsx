@@ -69,8 +69,11 @@ export function PrimaryNav({ compactLogo, localities }: { compactLogo: React.Rea
 
   const itemBase =
     "relative flex h-12 items-center gap-1 px-2 text-[0.9375rem] font-semibold whitespace-nowrap transition-colors after:absolute after:inset-x-2 after:bottom-0 after:h-[3px] after:transition-colors xl:px-2.5 xl:after:inset-x-2.5";
+  // Navy bar: white type, a red marker under the active section (the logo's red).
   const itemState = (isActive: boolean) =>
-    isActive ? "text-ink after:bg-red" : "text-ink-2 after:bg-transparent hover:text-ink hover:after:bg-line-strong";
+    isActive
+      ? "text-white after:bg-red"
+      : "text-white/80 after:bg-transparent hover:text-white hover:after:bg-white/35";
 
   return (
     <>
@@ -78,7 +81,7 @@ export function PrimaryNav({ compactLogo, localities }: { compactLogo: React.Rea
       <nav
         ref={navRef}
         aria-label="Primary"
-        className="sticky top-0 z-40 hidden border-b border-line bg-white/97 backdrop-blur-sm lg:block"
+        className="on-dark sticky top-0 z-40 hidden bg-navy-900 shadow-[0_1px_0_rgb(255_255_255/0.06)] lg:block"
         onMouseLeave={() => setOpen(null)}
       >
         <div className="container-page flex items-center">
@@ -102,7 +105,7 @@ export function PrimaryNav({ compactLogo, localities }: { compactLogo: React.Rea
                     </Link>
                     <button
                       type="button"
-                      className="grid h-12 w-6 place-items-center text-muted hover:text-ink"
+                      className="grid h-12 w-6 place-items-center text-white/60 hover:text-white"
                       aria-expanded={open === "jharkhand"}
                       aria-controls="menu-jharkhand"
                       aria-label="Jharkhand districts"
@@ -153,7 +156,7 @@ export function PrimaryNav({ compactLogo, localities }: { compactLogo: React.Rea
           <button
             type="button"
             onClick={openSearch}
-            className={`grid size-10 shrink-0 place-items-center text-ink-2 transition-opacity hover:text-ink ${stuck ? "opacity-100" : "pointer-events-none opacity-0"}`}
+            className={`grid size-10 shrink-0 place-items-center text-white/80 transition-opacity hover:text-white ${stuck ? "opacity-100" : "pointer-events-none opacity-0"}`}
             aria-label="Search"
             tabIndex={stuck ? 0 : -1}
           >

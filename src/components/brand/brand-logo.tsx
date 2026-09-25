@@ -5,23 +5,29 @@ import { getBrandLogos } from "@/lib/brand";
 
 interface Props {
   variant?: "primary" | "mobile" | "footer";
-  /** Rendered height in px; width follows the file's true aspect ratio. */
+  /** Height utility (e.g. "h-20"); width follows the file's true aspect ratio. */
   className?: string;
+  /** Rendered width hint for responsive srcset, e.g. "240px". */
+  sizes?: string;
   priority?: boolean;
   /** Render as a home link (header) or a plain image (footer). */
   asLink?: boolean;
+  /**
+   * The logo is designed for light backgrounds. On navy, `plate` seats it on a
+   * small white plate so its blue panel and white lettering stay legible.
+   */
+  plate?: boolean;
 }
 
 /**
- * Renders the official logo file from /public/brand at its native aspect ratio.
- * If no file has been supplied yet, a plain, clearly temporary wordmark is shown
- * so layouts can be reviewed — it is not a substitute for the real logo.
+ * Renders the official logo file from /public/brand at its native aspect ratio
+ * (never stretched, recoloured or redrawn). If no file has been supplied, a plain
+ * clearly-temporary wordmark keeps layouts reviewable.
  */
-export function BrandLogo({ variant = "primary", className = "h-12", priority, asLink = true }: Props) {
-  const logos = getBrandLogos();
-  const asset = logos[variant];
+export function BrandLogo({ variant = "primary", className = "h-12", sizes = "240px", priority, asLink = true, plate = false }: Props) {
+  const asset = getBrandLogos()[variant];
 
-  const content = asset ? (
+  const img = asset ? (
     <Image
       src={asset.src}
       width={asset.width}
@@ -30,18 +36,21 @@ export function BrandLogo({ variant = "primary", className = "h-12", priority, a
       loading={priority ? "eager" : "lazy"}
       fetchPriority={priority ? "high" : undefined}
       unoptimized={asset.src.endsWith(".svg")}
-      sizes="(min-width: 1024px) 240px, 160px"
+      sizes={sizes}
+      quality={75}
       className={`${className} w-auto max-w-none object-contain`}
     />
   ) : (
     <span
-      className={`${className} inline-flex items-center border border-dashed border-white/40 px-3 font-sans text-sm font-extrabold tracking-[0.12em] text-white uppercase`}
+      className={`${className} inline-flex items-center border border-dashed border-current px-3 font-sans text-sm font-extrabold tracking-[0.12em] uppercase`}
       title="Logo file missing — add it to /public/brand"
       data-missing-logo=""
     >
       {site.name}
     </span>
   );
+
+  const content = plate ? <span className="inline-flex items-center rounded-xs bg-white px-1.5 py-0.5">{img}</span> : img;
 
   if (!asLink) return content;
   return (

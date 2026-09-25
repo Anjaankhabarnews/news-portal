@@ -77,7 +77,7 @@
 :root {
   --page-max: 1320px;
   --gutter: 16px;
-  --header-mobile-h: 56px;
+  --header-mobile-h: 64px;
   /* Reading measure: ~70 characters of 19px serif body text. */
   --measure: 42rem;
   color-scheme: light;
@@ -157,6 +157,9 @@
 
 /* Horizontally scrollable rail (mobile chips, carousels) with no visible scrollbar */
 @utility scroll-rail {
+  /* Positioned so absolutely-positioned descendants (e.g. sr-only labels) are
+     clipped by the rail instead of widening the page. */
+  position: relative;
   overflow-x: auto;
   overscroll-behavior-x: contain;
   scrollbar-width: none;

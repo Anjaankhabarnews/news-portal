@@ -41,9 +41,8 @@ export function SiteFooter() {
     <footer className="on-dark mt-16 bg-navy-950 text-white md:mt-20">
       <div className="container-page grid gap-10 py-12 md:py-14 lg:grid-cols-12 lg:gap-8">
         <div className="lg:col-span-4">
-          <BrandLogo variant="footer" className="h-16" />
-          <p className="mt-4 font-serif text-xl text-white italic">{site.tagline}</p>
-          <p className="mt-3 max-w-sm text-[0.9375rem] leading-relaxed text-white/70">
+          <BrandLogo variant="footer" className="-ml-2 h-20" sizes="222px" />
+          <p className="mt-4 max-w-sm text-[0.9375rem] leading-relaxed text-white/70">
             A digital-first newsroom from Jharkhand, reporting on the region and the nation with accuracy, context and
             fairness.
           </p>

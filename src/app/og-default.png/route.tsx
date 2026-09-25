@@ -6,11 +6,12 @@ export const revalidate = 86400;
 
 /**
  * Default share card (1200×630) for pages without their own image — home,
- * sections, policies. Articles and videos use their lead image instead.
+ * sections, policies. The logo sits on white (as designed), framed by the
+ * brand's navy and red.
  */
-export function GET() {
-  const logo = logoDataUri();
-  const logoH = 300;
+export async function GET() {
+  const logo = await logoDataUri();
+  const logoW = 960;
   return new ImageResponse(
     (
       <div
@@ -21,17 +22,16 @@ export function GET() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          background: "#071426",
-          color: "#fff",
-          borderBottom: "14px solid #d71920",
+          background: "#ffffff",
+          borderTop: "18px solid #071426",
+          borderBottom: "18px solid #d71920",
         }}
       >
         {logo ? (
-          <img src={logo.uri} alt="" height={logoH} width={Math.round((logoH * logo.width) / logo.height)} />
+          <img src={logo.uri} alt="" width={logoW} height={Math.round((logoW * logo.height) / logo.width)} />
         ) : (
-          <div style={{ fontSize: 72, fontWeight: 800, letterSpacing: 4 }}>{site.name.toUpperCase()}</div>
+          <div style={{ fontSize: 72, fontWeight: 800, letterSpacing: 4, color: "#071426" }}>{site.name.toUpperCase()}</div>
         )}
-        <div style={{ marginTop: 36, fontSize: 40, fontStyle: "italic", opacity: 0.9 }}>{site.tagline}</div>
       </div>
     ),
     { width: 1200, height: 630 },
