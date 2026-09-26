@@ -33,7 +33,7 @@ interface ArticleRow {
   priority: number;
   is_breaking: boolean;
   is_developing: boolean;
-  hero_image: MediaImage;
+  hero_image: MediaImage | null;
   body: ArticleBlock[];
   key_takeaways: string[] | null;
   source: string | null;
@@ -76,7 +76,7 @@ function toArticle(r: ArticleRow): Article {
     author: toAuthor(r.author),
     publishedAt: r.published_at,
     updatedAt: r.updated_at ?? undefined,
-    image: r.hero_image,
+    image: r.hero_image ?? undefined,
     body: r.body ?? [],
     keyTakeaways: r.key_takeaways ?? undefined,
     format: r.format,

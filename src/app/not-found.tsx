@@ -3,10 +3,11 @@ import Link from "next/link";
 import { listArticles } from "@/lib/data";
 import { TextStory, StoryList } from "@/components/news/story-cards";
 import { btn } from "@/components/ui/primitives";
+import SiteLayout from "./(site)/layout";
 
 export const metadata: Metadata = { title: "Page not found", robots: { index: false } };
 
-export default async function NotFound() {
+async function NotFoundContent() {
   const { items } = await listArticles({ sort: "editorial", pageSize: 5 });
   return (
     <div className="container-page grid gap-12 py-12 md:py-20 lg:grid-cols-12">
@@ -45,5 +46,14 @@ export default async function NotFound() {
         </StoryList>
       </aside>
     </div>
+  );
+}
+
+/** Unmatched URLs render outside the (site) group, so wrap them in the site chrome here. */
+export default function NotFound() {
+  return (
+    <SiteLayout>
+      <NotFoundContent />
+    </SiteLayout>
   );
 }
